@@ -1,4 +1,5 @@
 using ActivitiesApi.Models;
+using ActivitiesApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,12 +12,15 @@ if (connectionString == null)
 }
 var config = builder.Configuration.GetSection("ActivityDatabaseSettings").Get<ActivityDatabaseSettings>();
 config!.ConnectionString = connectionString;
+
 builder.Services.Configure<ActivityDatabaseSettings>(i =>
 {
     i.ConnectionString = config.ConnectionString;
     i.DatabaseName = config.DatabaseName;
     i.ActivitiesCollectionName = config.ActivitiesCollectionName;
 });
+
+builder.Services.AddSingleton<ActivitiesService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
