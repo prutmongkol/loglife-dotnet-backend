@@ -11,7 +11,7 @@ public class Activity
 
     [BsonRepresentation(BsonType.ObjectId)]
     [BsonElement("userId")]
-    public string UserId { get; set; } = null!;
+    public string? UserId { get; set; }
 
     [BsonElement("title")]
     public string Title { get; set; } = null!;
