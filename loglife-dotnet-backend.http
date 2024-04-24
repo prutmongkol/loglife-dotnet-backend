@@ -4,3 +4,55 @@ GET {{loglife_dotnet_backend_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+
+GET {{loglife_dotnet_backend_HostAddress}}/activities/
+Accept: application/json
+
+###
+
+GET {{loglife_dotnet_backend_HostAddress}}/activities/660e6b49af25ac37c491da24
+Accept: application/json
+
+###
+POST {{loglife_dotnet_backend_HostAddress}}/activities/
+Content-Type: application/json
+Accept: application/json
+
+{
+    "title": "Running",
+    "description": "Test Create",
+    "type": "Running",
+    "startTime": "15:56",
+    "endTime": "20:02",
+    "date": "2024-03-30",
+    "duration": {
+        "hour": 4,
+        "minute": 6
+    },
+    "barometer": "1"
+}
+
+###
+PUT {{loglife_dotnet_backend_HostAddress}}/activities/6628fb3909243205e56002c8
+Content-Type: application/json
+Accept: application/json
+
+{
+    "title": "Running",
+    "description": "Really Test Update",
+    "type": "Running",
+    "startTime": "15:56",
+    "endTime": "20:02",
+    "date": "2024-03-30",
+    "duration": {
+        "hour": 4,
+        "minute": 6
+    },
+    "barometer": "1"
+}
+
+###
+DELETE {{loglife_dotnet_backend_HostAddress}}/activities/6628fb3909243205e56002c8
+Accept: application/json
+
+###
