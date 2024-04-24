@@ -9,7 +9,7 @@ public class ActivitiesService
     private readonly IMongoCollection<Activity> _activitiesCollection;
 
     public ActivitiesService(
-        IOptions<ActivityDatabaseSettings> activityDatabaseSettings)
+        IOptions<ActivitiesDatabaseSettings> activityDatabaseSettings)
     {
         var mongoClient = new MongoClient(
             activityDatabaseSettings.Value.ConnectionString);
