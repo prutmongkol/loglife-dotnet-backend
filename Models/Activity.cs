@@ -1,7 +1,7 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace ActivityApi.Models;
+namespace ActivitiesApi.Models;
 
 public class Activity
 {
