@@ -7,17 +7,27 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = Environment.GetEnvironmentVariable("MONGODB_URI");
 if (connectionString == null)
 {
-    Console.WriteLine("You must set your 'MONGODB_URI' environment variable. To learn how to set it, see https://www.mongodb.com/docs/drivers/csharp/current/quick-start/#set-your-connection-string");
+    Console.WriteLine("You must set your 'MONGODB_URI' environment variable.");
     Environment.Exit(0);
 }
-var config = builder.Configuration.GetSection("ActivityDatabaseSettings").Get<ActivitiesDatabaseSettings>();
-config!.ConnectionString = connectionString;
+var databaseName = Environment.GetEnvironmentVariable("MONGODB_DB");
+if (databaseName == null)
+{
+    Console.WriteLine("You must set your 'MONGODB_DB' environment variable.");
+    Environment.Exit(0);
+}
+var activitiesCollectionName = Environment.GetEnvironmentVariable("MONGODB_ACTIVITIES_COLLECTION");
+if (activitiesCollectionName == null)
+{
+    Console.WriteLine("You must set your 'MONGODB_ACTIVITIES_COLLECTION' environment variable.");
+    Environment.Exit(0);
+}
 
 builder.Services.Configure<ActivitiesDatabaseSettings>(i =>
 {
-    i.ConnectionString = config.ConnectionString;
-    i.DatabaseName = config.DatabaseName;
-    i.ActivitiesCollectionName = config.ActivitiesCollectionName;
+    i.ConnectionString = connectionString;
+    i.DatabaseName = databaseName;
+    i.ActivitiesCollectionName = activitiesCollectionName;
 });
 
 builder.Services.AddSingleton<ActivitiesService>();
