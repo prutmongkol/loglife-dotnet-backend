@@ -1,6 +1,7 @@
 # .NET Core build artifacts
 bin/
 obj/
+.mono/
 
 # NuGet packages
 *.nuget.props
