@@ -1,0 +1,25 @@
+# .NET Core build artifacts
+bin/
+obj/
+
+# NuGet packages
+*.nuget.props
+*.nuget.targets
+packages/
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+AnyCPU/
+*.exe
+*.pdb
+*.dll
+*.so
+*.dylib
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
