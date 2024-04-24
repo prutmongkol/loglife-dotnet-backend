@@ -1,10 +1,5 @@
 @loglife_dotnet_backend_HostAddress = http://localhost:5200
 
-GET {{loglife_dotnet_backend_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
-
 GET {{loglife_dotnet_backend_HostAddress}}/activities/
 Accept: application/json
 
@@ -33,7 +28,7 @@ Accept: application/json
 }
 
 ###
-PUT {{loglife_dotnet_backend_HostAddress}}/activities/6628fb3909243205e56002c8
+PUT {{loglife_dotnet_backend_HostAddress}}/activities/6629005a8b2605e53b146ec9
 Content-Type: application/json
 Accept: application/json
 
@@ -52,7 +47,7 @@ Accept: application/json
 }
 
 ###
-DELETE {{loglife_dotnet_backend_HostAddress}}/activities/6628fb3909243205e56002c8
+DELETE {{loglife_dotnet_backend_HostAddress}}/activities/6629005a8b2605e53b146ec9
 Accept: application/json
 
 ###
