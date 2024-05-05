@@ -2,6 +2,7 @@
 bin/
 obj/
 .mono/
+.vscode/
 
 # NuGet packages
 *.nuget.props
